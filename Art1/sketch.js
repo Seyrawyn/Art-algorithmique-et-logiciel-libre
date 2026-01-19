@@ -3,15 +3,15 @@
 
 let tiles = [];
 
-const TILE_R = 5;            // tile size (radius)
-const GAP = 1;                // grout thickness (space between tiles)
+const TILE_R = 3;            // tile size (radius)
+const GAP = .01;                // grout thickness (space between tiles)
 const PADDING = 20;
 
 const BG = "#8f8f8f";
 const TILE_COLOR = "#1e5cff";
 
 // Density/quality knobs
-const CANDIDATE_MULT = 70;     // more candidates => fuller fill (slower)
+const CANDIDATE_MULT = 100;     // more candidates => fuller fill (slower)
 const HOLE_SAMPLES = 3500;     // more => better "no big empty space" (slower)
 const HOLE_ADDS_MULT = 0.9;    // how aggressively to add tiles during hole fill
 const RELAX_ITERS = 80;        // repel-only relaxation (keeps edges filled)
