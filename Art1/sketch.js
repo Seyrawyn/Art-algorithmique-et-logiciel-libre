@@ -3,7 +3,7 @@
 
 let tiles = [];
 
-const TILE_R = 3;            // tile size (radius)
+const TILE_R = 10;            // tile size (radius)
 const GAP = .01;                // grout thickness (space between tiles)
 const PADDING = 20;
 
