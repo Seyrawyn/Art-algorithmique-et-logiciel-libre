@@ -6,13 +6,13 @@ let tiles = [];
 let shapes = [];
 
 // ===== Your tile scale =====
-const TILE_R = 6;
+const TILE_R = 2;
 const GAP = 0.01;
 const PADDING = 20;
 const GROUT = "#8f8f8f";
 
 // ===== Speed knobs =====
-const SHAPE_CACHE = 250; // precomputed tile shapes (reused)
+const SHAPE_CACHE = 500; // precomputed tile shapes (reused)
 const POISSON_K = 18;    // attempts per active point (higher = denser, slower)
 
 // ===== Painting knobs =====
@@ -21,7 +21,8 @@ const STROKE_MAX_EXCL = 20; // 6..14
 const FINAL_BLUR = 5;
 
 function setup() {
-    createCanvas(1500, 800);
+    createCanvas(windowWidth, windowHeight);
+    // createCanvas(1500, 800);
     pixelDensity(2);
 
     pg = createGraphics(width, height);
@@ -109,6 +110,9 @@ function samplePixelFast(g, x, y) {
 // =====================================================
 // B) POISSON-DISC SAMPLING (seeded top-left)
 // =====================================================
+
+// This section has been done with the help of chatgpt
+
 function poissonDiscFromTopLeft(minX, maxX, minY, maxY, r, k) {
     const w = maxX - minX;
     const h = maxY - minY;
@@ -235,7 +239,7 @@ function pickBackgroundColor() {
     const h = random(0, 360);
     const s = random(12, 35);
     const b = random(70, 92);
-    return color(h, s, b, 1); // now interpreted as HSB correctly
+    return color(h, s, b, 1);
 }
 
 function pickHarmoniousStroke(bg) {
@@ -256,6 +260,7 @@ function pickHarmoniousStroke(bg) {
     return color(h, s, b, random(0.12, 0.22));
 }
 
+// The following function has been done with the help of chatgpt
 function drawFlowStroke(g, col, targetLen) {
     g.push();
     g.noFill();
