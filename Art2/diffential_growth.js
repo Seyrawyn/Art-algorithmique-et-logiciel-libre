@@ -12,14 +12,14 @@ let lines = [];
 let paused = false;
 
 // ===== Coverage knobs =====
-const TARGET_LOOPS = 10;          // increase to cover screen more
+const TARGET_LOOPS = 1;          // increase to cover screen more
 const LOOP_RADIUS_MIN = 50;
 const LOOP_RADIUS_MAX = 120;
 const LOOP_POINTS_MIN = 70;
 const LOOP_POINTS_MAX = 140;
 
-const ITER_PER_FRAME = 5;         // increase = faster evolution (heavier CPU)
-const BG_FADE_ALPHA = 2;         // 0..255 (higher = more fade each frame)
+const ITER_PER_FRAME = 2;         // increase = faster evolution (heavier CPU)
+const BG_FADE_ALPHA = 20;         // 0..255 (higher = more fade each frame)
 
 // ===== Growth knobs =====
 const REPULSION_RADIUS = 20;
