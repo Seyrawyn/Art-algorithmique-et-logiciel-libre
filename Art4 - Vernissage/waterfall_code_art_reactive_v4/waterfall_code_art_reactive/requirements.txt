@@ -1,0 +1,6 @@
+numpy>=1.26
+pygame-ce>=2.5
+
+# Optional CUDA acceleration:
+# install a CuPy build that matches your driver / toolkit, for example one of the
+# cupy-cuda11x or cupy-cuda12x wheels described in the CuPy install guide.
